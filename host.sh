@@ -72,9 +72,9 @@ rm -f tmpblock
 echo " "
 echo "Check format..."
 
-while read line; do
-    if ! expr index "$line" "." ; then
-        echo "$line" >> formatallow
+while read lineallow; do
+    if ! expr index "$lineallow" "." ; then
+        echo "$lineallow" >> formatallow
     fi
 done < allow
 
@@ -82,9 +82,9 @@ sort -n allow formatallow formatallow | uniq -u > tmp && mv tmp tmpallow
 sort -u tmpallow > allow
 rm -f tmpallow formatallow
 
-while read line; do
-    if ! expr index "$line" "." ; then
-        echo "$line" >> formatblock
+while read lineblock; do
+    if ! expr index "$lineblock" "." ; then
+        echo "$lineblock" >> formatblock
     fi
 done < block
 
