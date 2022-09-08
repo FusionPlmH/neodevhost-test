@@ -69,14 +69,14 @@ sort -u tmpblock > block
 rm -f tmpblock
 
 
-#echo " "
-#echo "Check format..."
+echo " "
+echo "Check format..."
 
-#while read lineallow; do
-#    if ! expr index "$lineallow" "." ; then
-#        echo "$lineallow" >> formatallow
-#    fi
-#done < allow
+while read lineallow; do
+    if ! expr index "$lineallow" "." ; then
+        echo "$lineallow" >> formatallow
+    fi
+done < allow
 
 #sort -n allow formatallow formatallow | uniq -u > tmp && mv tmp tmpallow
 #sort -u tmpallow > allow
