@@ -78,15 +78,15 @@ while read lineallow; do
     fi
 done < allow
 
-#sort -n allow formatallow formatallow | uniq -u > tmp && mv tmp tmpallow
-#sort -u tmpallow > allow
-#rm -f tmpallow formatallow
+sort -n allow formatallow formatallow | uniq -u > tmp && mv tmp tmpallow
+sort -u tmpallow > allow
+rm -f tmpallow formatallow
 
-#while read lineblock; do
-#    if ! expr index "$lineblock" "." ; then
-#        echo "$lineblock" >> formatblock
-#    fi
-#done < block
+while read lineblock; do
+    if ! expr index "$lineblock" "." ; then
+        echo "$lineblock" >> formatblock
+    fi
+done < block
 
 #sort -n block formatblock formatblock | uniq -u > tmp && mv tmp tmpblock
 #sort -u tmpblock > block
